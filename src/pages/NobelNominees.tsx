@@ -1,9 +1,8 @@
 
 import { FC } from "react";
-import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Icon from "@/components/ui/icon";
 
 interface NomineeProps {
@@ -58,12 +57,11 @@ const NobelNominees: FC = () => {
     }
   ];
 
+  // Устанавливаем заголовок страницы с помощью document.title вместо react-helmet
+  document.title = "Писатели без Нобелевской премии | Литературный архив";
+  
   return (
     <div className="container py-10 mx-auto">
-      <Helmet>
-        <title>Писатели без Нобелевской премии | Литературный архив</title>
-      </Helmet>
-      
       <div className="mb-8">
         <Link to="/">
           <Button variant="ghost" className="gap-2">
